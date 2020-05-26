@@ -1,0 +1,58 @@
+//
+//  flexbox
+//-------------------------------
+@mixin flexbox{
+  display:-webkit-flex;
+  display:flex;
+  -webkit-flex-wrap:wrap;
+  flex-wrap:wrap;
+}
+//両端揃え
+@mixin flex_between{
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+//均等揃え
+@mixin flex_around{
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+//センター揃え
+@mixin flex_center{
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+//
+//  position
+//-------------------------------
+//ポジション（上・左）
+@mixin absolute_topleft($top: 0, $left: 0) {
+  position: absolute;
+  top: $top + px;
+  left: $left + px;
+}
+//ポジション（上・右）
+@mixin absolute_topright($top: 0, $right: 0) {
+  position: absolute;
+  top: $top + px;
+  right: $right + px;
+}
+
+//
+//  transition
+//-------------------------------
+@mixin transition_general{
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+@mixin transition_animate{
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+//
+//  pc サイズ
+//-------------------------------
+$menuwidth : 8em;
+$menuheight : 8em;

@@ -1,0 +1,164 @@
+@import "lib/mixin";
+@import "lib/color";
+
+/*
+  footer
+-------------------------------*/
+//totop
+.totop{
+  @include absolute_topleft;
+  bottom: calc(100% + 8em);
+  color: $maincolor;
+  left: .5em;
+  letter-spacing: .2em;
+  top: auto;
+  transform: rotate(90deg);
+  transform-origin: bottom left;
+}
+//footer
+.footer{
+  background-color: $maincolor;
+  position: relative;
+}
+.footer__container{
+  padding-bottom: 2em;
+  padding-top: 3em;
+}
+.footer__nav{
+  @include flexbox;
+  @include flex_center;
+  align-items: center;
+  color: #fff;
+  margin-bottom: 2em;
+  width: 100%;
+  &__contents{
+    @include flexbox;
+    align-items: center;
+    margin-left: 2em;
+  }
+  &__ttl::after{
+    border-right: 1px solid;
+    content: '';
+    display: inline;
+    margin-left: 2em;
+  }
+}
+.sns__nav{
+  li{
+    margin-right: 1.5em;
+  }
+  li:last-of-type{
+    margin-right: 0;
+  }
+  a{
+    display: block;
+    font-size: 28px;
+    font-weight: 100;
+    line-height: 1;
+    height: 28px;
+    position: relative;
+    width: 28px;
+  }
+  a::before{
+    @include absolute_topleft;
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+  .twitter a::before{
+    background: url(../images/icon_twitter.svg) no-repeat center;
+    background-size: contain;
+    content: '';
+  }
+  .twitter-fill a::before{
+    background: url(../images/icon_twitter_fill.svg) no-repeat center;
+    background-size: contain;
+    content: '';
+  }
+  .instagram a::before{
+    background: url(../images/icon_instagram.svg) no-repeat center;
+    background-size: contain;
+    content: '';
+  }
+  .instagram-fill a::before{
+    background: url(../images/icon_instagram_fill.svg) no-repeat center;
+    background-size: contain;
+    content: '';
+  }
+  .youtube a::before{
+    background: url(../images/icon_youtube.svg) no-repeat center;
+    background-size: contain;
+    content: '';
+  }
+  .line a::before{
+    background: url(../images/icon_line.svg) no-repeat center;
+    background-size: contain;
+    content: '';
+  }
+  .spotify a::before{
+    background: url(../images/icon_spotify.svg) no-repeat center;
+    background-size: contain;
+    content: '';
+  }
+  .spotify-fill a::before{
+    background: url(../images/icon_spotify_fill.svg) no-repeat center;
+    background-size: contain;
+    content: '';
+  }
+  .applemusic a::before{
+    background: url(../images/icon_music.svg) no-repeat center;
+    background-size: contain;
+    content: '';
+  }
+  .applemusic-fill a::before{
+    background: url(../images/icon_music_fill.svg) no-repeat center;
+    background-size: contain;
+    content: '';
+  }
+}
+.copyright{
+  color: $subcolor;
+  font-size: 1.2rem;
+  margin-top: 3em;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  //totop
+  .totop{
+    left: auto;
+    right: calc(50px + 2%);
+    bottom: calc(100% + 1em);
+    transform: rotate(90deg);
+    transform-origin: bottom right;  
+    span{
+      height: 50px;
+    }
+  }
+  //footer
+  .footer__container{
+    @include flexbox;
+    @include flex_center;
+    padding-bottom: 1em;
+    padding-top: 2em;
+  }
+  .footer__nav{
+    align-items: center;
+    margin-bottom: 0;
+    margin-right: 6em;
+    width: auto;
+    &:last-of-type{
+      margin-right: 0;
+    }
+  }
+  .sns__nav{
+    a{
+      font-size: 25px;
+      height: 25px;
+      width: 25px;
+    }
+  }  
+  .copyright{
+    margin-top: 2em;
+    width: 100%;
+  }
+}

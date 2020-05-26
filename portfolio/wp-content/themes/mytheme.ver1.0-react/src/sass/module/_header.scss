@@ -1,0 +1,195 @@
+@import "lib/mixin";
+@import "lib/color";
+
+/*
+  header
+-------------------------------*/
+.header{
+  height: 5em;
+}
+.header__logo{
+  height: 100%;
+  margin-left: 1.5em;
+  width: 180px;
+  a{
+    @include flexbox;
+    align-items: center;
+    height: 100%;
+  }
+}
+/* toggle btn */
+.nav__toggle{
+  display: block;
+  height: 50px;
+  margin: 10px;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 50px;
+  z-index: 1000;
+  span{
+    @include transition_general;
+    background-color: $maincolor;
+    display: block;
+    height: 2px;
+    left: 20%;
+    position: absolute;
+    width: 60%;
+  }
+  span:nth-of-type(1){
+    top: 16px;
+  }
+  span:nth-of-type(2){
+    top: 24px;
+  }
+  span:nth-of-type(3){
+    top: 32px;
+    width: 40%;
+  }
+  &.active{
+    span{
+      background-color: #fff;
+    }
+    span:nth-of-type(1){
+      -webkit-transform: translateY(8px) rotate(-45deg);
+      transform: translateY(8px) rotate(-45deg);
+    }
+    span:nth-of-type(2){
+      opacity: 0;
+    }
+    span:nth-of-type(3){
+      -webkit-transform: translateY(-8px) rotate(45deg);
+      transform: translateY(-8px) rotate(45deg);
+      width: 60%;
+    }
+  }
+}
+/* toggle content */
+.js-toggle-content{
+  @include transition_general;
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  &.active{
+    right: 0;
+  }
+}
+.nav__content{
+  background: $maincolor;
+  height: 100%;
+  &__wrap{
+    height: 100vh;
+    overflow-y: scroll;
+  }
+}
+.gnav{
+  padding: 5em 4em;
+  &__item__list{
+  }
+  &__item{
+    color: #fff;
+    font-size: 130%;
+    width: 100%;
+    a{
+      @include flexbox;
+      align-items: center;
+      justify-content: flex-start;
+      padding: .5em;
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .header{
+    height: $menuheight;
+  }
+  .header__logo{
+    height: 100%;
+    margin-left: 4%;
+    width: 280px;
+    img{
+      height: 49.27px;
+      width: 280px;
+    }
+  }
+  /* toggle btn */
+  .nav__toggle{
+    cursor: pointer;
+    margin: 0 2%;
+    top: calc((100% - 50px) / 2);
+  }
+  .nav__toggle:hover{
+    span:nth-of-type(3){
+      width: 60%;
+    }
+  }
+  /* toggle content */
+  .js-toggle-content{
+    @include transition_animate;
+    width: 50%;
+  }
+  .js-toggle-mask{
+    position: relative;
+    &::before{
+      @include transition_animate;
+      position: fixed;
+      background-color: $subcolor80;
+      background-size: cover;
+      content: '';
+      display: block;
+      height: 100%;
+      left: -100%;
+      top: 0;
+      width: 50%;
+    }
+    &.active{
+      &::before{
+        left: 0;
+        z-index: 998;
+      }
+    }
+  }
+  .nav__content{
+    &__wrap{
+      background-color: $maincolor;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .gnav{
+    height: 100vh;
+    &__item__list{
+      @include flexbox;
+      align-content: center;
+      height: 100%;
+    }
+    &__item{
+      font-size: 2rem;
+      margin-left: 2em;
+      position: relative;
+    }
+    &__item a{
+      margin-left: 1em;
+    }
+    &__item a::before{
+      @include absolute_topleft;
+      @include transition_general;
+      bottom: 0;
+      content: '';
+      border-top: 1px solid;
+      content: '';
+      display: block;
+      height: 1px;
+      opacity: 0;
+      margin: auto 0;
+      width: .5em;
+    }
+    &__item:hover{
+      a::before{
+        opacity: 1;
+      }
+    }
+  }
+}

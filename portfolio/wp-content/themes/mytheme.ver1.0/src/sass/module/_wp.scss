@@ -1,0 +1,175 @@
+@import "lib/mixin";
+@import "lib/color";
+
+/*
+  wp instagram__widget
+-------------------------------*/
+.wp__instagram__widget{
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .wp__instagram__widget{
+    width: 50%;
+  }
+}
+
+/*
+  wp editor
+-------------------------------*/
+.wp__editor{
+  overflow-wrap: break-word;
+  p{
+    margin-bottom: 1.5em;
+    &:last-of-type{
+      margin-bottom: 0;
+    }
+  }
+  img{
+    display: block;
+    height: auto;
+    margin: 1em auto;
+    width: 100%;
+  }
+  .yt__wrap{
+    margin-bottom: 1em;
+    overflow: hidden;
+    position: relative;
+    padding: 56.3% 0 0;
+    width: 100%;
+    iframe{
+      @include absolute_topleft;
+      width: 100.5%;
+      height: 100.5%;
+    }
+  }
+  a{
+    text-decoration: underline;
+  }
+  .alignleft{
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
+  }
+  .alignright{
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+  }
+}
+.pagination{
+  margin-top: 3em;
+  text-align: center;
+  .page-numbers{
+    margin: 0 1em;
+    position: relative;
+    &.current::before{
+      @include absolute_topleft;
+      border-top: 1px solid;
+      content: '';
+      left: -.5em;
+      top: 50%;
+      width: calc(100% + 1em);
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .wp__editor{
+    img{
+      margin: 2em auto;
+    }
+  }
+  .pagination{
+    margin-top: 5em;
+  }
+}
+
+/*
+  wp form
+-------------------------------*/
+input,
+button,
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font: inherit;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  display: none;
+}
+
+input[type='submit'],
+input[type='button'],
+label,
+button,
+select {
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+.contact__form{
+  input,
+  textarea{
+    border: 1px solid $maincolor20;
+    padding: .5em;
+    width: 100%;
+  }
+  p{
+    margin-bottom: 1em;
+  }
+  p:last-of-type{
+    @include flexbox;
+    align-items: center;
+    justify-content: center;
+    &::before{
+      @include transition_general;
+      border-top: 1px solid;
+      content: '';
+      display: block;
+      height: 1px;
+      width: 2em;
+    }
+    input[type='submit']{
+      border: none;
+      display: block;
+      width: auto;
+      margin-left: .5em;
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .contact__form{
+    p:last-of-type{
+      margin: 0 auto;
+      position: relative;
+      width: 100px;
+      &::before{
+        @include absolute_topleft;
+        bottom: 0;
+        margin: auto;
+      }
+      input[type='submit']{
+        margin-left: 2.5em;
+      }
+    }
+    p:last-of-type:hover{
+      &::before{
+        @include transition_general;
+        width: 3em;
+      }
+    }
+  }
+}
