@@ -1,0 +1,111 @@
+/*
+Author URI: http://wordpress.org/
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+@charset "UTF-8";
+
+/* environment */
+html {
+  font-size: 62.5%;
+  width: 100%;
+}
+body {
+  font-family: 'Lato', 'Yu Gothic', 'YuGothic', 'Meiryo', 'メイリオ', 'Hiragino Kaku Gothic Pro W6', 'ヒラギノ角ゴ ProN W6', 'ＭＳ Ｐ明朝', 'Osaka－等幅', 'Osaka-Mono', 'sans-serif';
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-align: justify;
+  -webkit-text-size-adjust: 100%;
+  word-break: break-all;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 1.6rem;
+    /*min-width: 1200px;*/
+  }
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+fieldset, img {
+  border: 0;
+}
+address, caption, cite, code, dfn, em, th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+ol, ul {
+  list-style: none;
+}
+caption, th {
+  text-align: left;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+q:before, q:after {
+  content: '';
+}
+abbr, acronym {
+  border: 0;
+  font-variant: normal;
+}
+sup {
+  vertical-align: text-top;
+}
+sub {
+  vertical-align: text-bottom;
+}
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+input, textarea, select {
+  *font-size: 100%;
+}
+legend {
+  color: #000;
+}
+img {
+  vertical-align: bottom;
+  width: 100%;
+}
+main {
+  display: block;
+}
+a {
+  text-decoration: none;
+}
+
+
+/* style */
+section{
+  padding: 4em 0;
+}
+body{
+  text-align: center;
+}
+h1{
+  font-size: 2rem;
+  font-weight: bold;
+}
+h2{
+  font-size: 2rem;
+  font-weight: bold;
+}
+p{
+  margin-top: 1em;
+}
+#result{
+  margin-top: 4em;
+}
